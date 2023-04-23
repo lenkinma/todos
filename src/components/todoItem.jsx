@@ -6,16 +6,16 @@ const TodoItem = ({id, title, completed}) => {
 	const dispatch = useDispatch();
 
 	return (
-		<li>
-			<input
+		<li className='todo_item'>
+			<input className='checkbox'
 				type={'checkbox'}
 				checked={completed}
 				onChange={() => dispatch(toggleStatus(id))}
 			/>
-			<span>{title}</span>
-			<span
+			<div className='title'>{title}</div>
+			<div
 				className='delete'
-				onClick={() => dispatch(deleteTodo(id))}>&times;</span>
+				onClick={() => dispatch(deleteTodo(id))}>&times;</div>
 		</li>
 	);
 }
